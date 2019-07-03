@@ -3,7 +3,7 @@ Hello!
 Below you can find a outline of how to reproduce my solution for the TrackML competition.
 If you run into any trouble with the setup/code or have any questions please contact me at top-quarks@protonmail.com
 
-#HARDWARE: (The following specs were used for testing and creating most submissions*)
+# HARDWARE: (The following specs were used for testing and creating most submissions*)
 Ubuntu 16.04 LTS
 Lenovo Legion Y720 (4 core i7-7770HQ, 16 GB memory, didn't use the GTX 1060 graphics card)
 
@@ -11,7 +11,7 @@ Lenovo Legion Y720 (4 core i7-7770HQ, 16 GB memory, didn't use the GTX 1060 grap
 
 The minimum hardware is currently limited by the 4.07GB peak memory usage of the largest event. The total run-time for all 125 events is assumed to be approximately 16 hours divided by the number of cores.
 
-#SOFTWARE
+# SOFTWARE
 The final model is standalone C++ requiring only standard STL libraries and C++11 support, python is only used for scripting (re-training, running multiple events in parallel, stitching submission files)
 g++ (Ubuntu 5.5.0-12ubuntu1~16.04) 5.5.0 20171010
 Python 3.5.2
@@ -20,7 +20,7 @@ For optional re-training of logistic regression parameters
 scikit-learn==0.19.1
 numpy==1.14.3
 
-#DATA SETUP
+# DATA SETUP
 The model assumes it can find the following (un-zipped) competition files (the contents of blacklist_training.zip is contained in blacklist/)
 
 blacklist/
@@ -30,7 +30,7 @@ test/
 
 in a folder specified by "base_path" in input.hpp . There is no fatal error if blacklist isn't found, and we don't need train_100_events/ except for re-training the model. Also, note that "base_path" can't use ~/ to point to home, it needs a full or relative path like "/home/icecuber/kaggle_data" or "../kaggle_data/".
 
-#MODEL RUN
+# MODEL RUN
 The model is run with
 
 python3 predict.py
